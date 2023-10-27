@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
   port: 3306,
   username: "root",
   password: "1234",
-  database: "prueba4",
+  database: "steel_&_ink_studio",
   entities: [Gallery, Customer, Tattoo_artist, Appointment],
   migrations: [
     CreateTableCustomers1698340010084,
