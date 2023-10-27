@@ -37,7 +37,7 @@ const createTask = async(req: any, res: Response) => {
   }
 }
 
-const getAllTasksByUserId = async(req: any, res: Response) => {
+const getAllTasksByUserId = async(req: Request, res: Response) => {
   try {
     const taskId = req.params.id
     const task = await Task.findOne(
