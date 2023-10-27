@@ -2,6 +2,7 @@ import { Response, Request } from "express";
 import jwt from "jsonwebtoken";
 import { Customer } from "../models/Customer";
 import bcrypt from "bcrypt";
+import { TokenDecoded } from "../../types";
 
 const register = async (req: Request, res: Response) => {
     try{
@@ -46,4 +47,80 @@ const register = async (req: Request, res: Response) => {
     }
 }
 
-export { register }
+const login = async (req: Request, res: Response) => {
+    try{
+        const email = req.body.email
+        const password = req.body.password
+
+        const user = await Customer.findOneBy(
+            {
+                email: email
+            }
+        )
+
+        if (!user) {
+            return res.status(400).json(
+                {
+                    success: true,
+                    message: 'Email or password incorrect'
+                }
+            )
+        }
+
+        const token = jwt.sign(
+            {
+              id: user.id,
+              role: user.role,
+              email: user.email
+            },
+            "secreto",
+            {
+              expiresIn: "3h",
+            }
+          );
+
+          return res.json(
+            {
+              success: true,
+              message: "User logged succesfully",
+              token: token
+            }
+          )
+    } catch (error) {
+        return res.status(500).json(
+          {
+            success: false,
+            message: "users cant be logged",
+            error: error
+          }
+        )
+      }
+}
+
+const profile = async (req: Request, res: Response) => {
+    try{
+        const user = await Customer.findOneBy(
+            {
+                id: req.token.id
+            }
+        )
+
+        return res.json(
+            {
+                success: true,
+                message: "profile user retrieved",
+                data: user
+            }
+        )
+    } catch (error) {
+        return res.json(
+          {
+            success: false,
+            message: "User profile cant be retrieved",
+            error: error
+          }
+        )
+    }
+}
+
+export { register, login, profile }
