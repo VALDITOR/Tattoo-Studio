@@ -32,7 +32,7 @@ export class CreateTableCustomers1698340010084 implements MigrationInterface {
                     {
                         name: "password",
                         type: "varchar",
-                        length: "50"
+                        length: "250"
                     },
                     {
                         name: "role",
