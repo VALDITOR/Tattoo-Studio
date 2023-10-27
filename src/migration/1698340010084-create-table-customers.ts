@@ -35,6 +35,12 @@ export class CreateTableCustomers1698340010084 implements MigrationInterface {
                         length: "50"
                     },
                     {
+                        name: "role",
+                        type: "enum",
+                        enum: ["user", "admin", "super_admin"],
+                        default: '"user"'
+                    },
+                    {
                         name: "is_active",
                         type: "boolean",
                         default: true

@@ -21,6 +21,9 @@ export class Customer extends BaseEntity {
 
   @Column()
   is_active!: boolean
+
+  @Column()
+  role!: string
   
   @Column()
   created_at!: Date

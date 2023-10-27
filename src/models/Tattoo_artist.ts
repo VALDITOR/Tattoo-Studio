@@ -21,6 +21,9 @@ export class Tattoo_artist extends BaseEntity {
   password!: string
 
   @Column()
+  role!: string
+
+  @Column()
   is_active!: boolean
   
   @Column()
