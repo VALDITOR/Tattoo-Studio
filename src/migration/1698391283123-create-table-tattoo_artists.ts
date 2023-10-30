@@ -33,7 +33,7 @@ export class CreateTableTattooArtists1698391283123 implements MigrationInterface
                     {
                         name: "password",
                         type: "varchar",
-                        length: "50"
+                        length: "250"
                     },
                     {
                         name: "role",

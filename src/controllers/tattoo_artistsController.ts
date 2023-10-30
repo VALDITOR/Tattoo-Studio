@@ -1,13 +1,13 @@
-import { Response, Request } from "express";
+import { Response, Request, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { Customer } from "../models/Customer";
+import { Tattoo_artist } from "../models/Tattoo_artist";
 import bcrypt from "bcrypt";
 import { TokenDecoded } from "../../types";
 
-const register = async (req: Request, res: Response) => {
+const register = async (req: Request, res:Response, next: NextFunction) => {
     try{
-        const name = req.body.name;
-        const surname = req.body.surname;
+        const name = req.body.name
+        const surname = req.body.name
         const email = req.body.email;
         const password = req.body.password;
 
@@ -24,7 +24,7 @@ const register = async (req: Request, res: Response) => {
 
         const encryptedPassword = bcrypt.hashSync(password, 10)
 
-        const newCustomer = await Customer.create({
+        const newCustomer = await Tattoo_artist.create({
             name: name,
             surname: surname,
             email: email,
@@ -36,11 +36,11 @@ const register = async (req: Request, res: Response) => {
             message: "Customer account created succesfully",
             token: newCustomer
           })
-    } catch (error) {
+    }catch (error) {
         return res.status(500).json(
             {
                 success: false,
-                message: "Customer account cant be created",
+                message: "Tattoo artist account cant be created",
                 error: error
             }
         )
@@ -52,7 +52,7 @@ const login = async (req: Request, res: Response) => {
         const email = req.body.email
         const password = req.body.password
 
-        const user = await Customer.findOneBy(
+        const user = await Tattoo_artist.findOneBy(
             {
                 email: email
             }
@@ -90,68 +90,11 @@ const login = async (req: Request, res: Response) => {
         return res.status(500).json(
           {
             success: false,
-            message: "users cant be logged",
+            message: "User cant be logged",
             error: error
           }
         )
       }
 }
 
-const profile = async (req: Request, res: Response) => {
-    try{
-        const user = await Customer.findOneBy(
-            {
-                id: req.token.id
-            }
-        )
-
-        return res.json(
-            {
-                success: true,
-                message: "profile user retrieved",
-                data: user
-            }
-        )
-    } catch (error) {
-        return res.json(
-          {
-            success: false,
-            message: "User profile cant be retrieved",
-            error: error
-          }
-        )
-    }
-}
-
-const update = async (req: Request, res: Response) => {
-  try{
-
-    const {name, surname,email,password} = req.body
-
-    const updateCustomer = await Customer.update(
-      {
-        id: req.token.id
-      },
-      {
-        name: name,
-        surname: surname,
-        email: email,
-        password: password
-      }
-    )
-
-    return res.json({
-      success: true,
-      message: "User updated",
-      data: updateCustomer
-    })
-  } catch (error) {
-    return res.json({
-      success: false,
-      message: "User information cant by updated",
-      error: error
-    })
-  }
-}
-
-export { register, login, profile, update }
+export { register, login }
