@@ -123,4 +123,35 @@ const profile = async (req: Request, res: Response) => {
     }
 }
 
-export { register, login, profile }
+const update = async (req: Request, res: Response) => {
+    try{
+  
+      const {name, surname,email,password} = req.body
+  
+      const updateCustomer = await Tattoo_artist.update(
+        {
+          id: req.token.id
+        },
+        {
+          name: name,
+          surname: surname,
+          email: email,
+          password: password
+        }
+      )
+  
+      return res.json({
+        success: true,
+        message: "User updated",
+        data: updateCustomer
+      })
+    } catch (error) {
+      return res.json({
+        success: false,
+        message: "User information cant by updated",
+        error: error
+      })
+    }
+  }
+
+export { register, login, profile, update }
