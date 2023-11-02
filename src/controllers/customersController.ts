@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { Customer } from "../models/Customer";
 import bcrypt from "bcrypt";
 import { TokenDecoded } from "../../types";
+import { Appointment } from "../models/Appointment";
 
 const register = async (req: Request, res: Response) => {
     try{
@@ -154,4 +155,43 @@ const update = async (req: Request, res: Response) => {
   }
 }
 
-export { register, login, profile, update }
+const getAllAppointmentByCustomerId = async(req: Request, res: Response) => {
+  try {
+    const appointment = await Appointment.find(
+      {
+        select: {
+          id: true,
+          tattoo_artist_id: true,
+          status: true,
+          date: true,
+        tattoo_artist: {
+          name: true,
+          surname: true,
+          email: true,
+          password: false
+        }
+      }
+        ,where:{
+          customer_id: req.token.id
+          },
+        relations: {
+          tattoo_artist: true,
+        },
+      }
+    )
+
+    return res.json({
+      success: true,
+      message: "appointments by user retrieved",
+      data: appointment
+    })
+  } catch (error) {
+    return res.json({
+      success: false,
+      message: "appointments cant by user retrieved",
+      error: error
+    })
+  }
+}
+
+export { register, login, profile, update, getAllAppointmentByCustomerId }

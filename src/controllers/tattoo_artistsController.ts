@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken";
 import { Tattoo_artist } from "../models/Tattoo_artist";
 import bcrypt from "bcrypt";
 import { TokenDecoded } from "../../types";
+import { Appointment } from "../models/Appointment";
+import { Customer } from "../models/Customer";
 
 const register = async (req: Request, res:Response, next: NextFunction) => {
     try{
@@ -154,4 +156,111 @@ const update = async (req: Request, res: Response) => {
     }
   }
 
-export { register, login, profile, update }
+  const getAllAppointmentByTattooArtistId = async(req: Request, res: Response) => {
+    try {
+      const appoimentId = req.params.id
+      const appointment = await Appointment.find(
+        {
+          where:{
+          tattoo_artist_id: req.token.id
+          },
+          select: {
+            id: true,
+            customer_id: true,
+            status: true,
+            date: true,
+            customer: {
+              name: true,
+              surname: true,
+              email: true,
+              password: false
+            }
+          },
+          relations: {
+            customer: true,
+          },
+        }
+      )
+  
+      return res.json({
+        success: true,
+        message: "appointments by tattoo artist retrieved",
+        data: appointment
+      })
+    } catch (error) {
+      return res.json({
+        success: false,
+        message: "appointments cant by tattoo artist retrieved",
+        error: error
+      })
+    }
+  }
+
+  const getAllTattooArtist = async (req: Request, res: Response) => {
+    try {
+      const tattoo_artists = await Tattoo_artist.find(
+        {
+          select: {
+            name: true,
+            surname: true,
+            email: true,
+        }
+        }
+      );
+  
+      return res.json(
+        {
+          success: true,
+          message: "users retrieved",
+          data: tattoo_artists
+        }
+      )
+  
+    } catch (error) {
+      return res.json(
+        {
+          success: false,
+          message: "users cant be retrieved",
+          error: error
+        }
+      )
+    }
+  }
+
+  const getAllCustomers = async (req: Request, res: Response) => {
+    try {
+      const customers = await Customer.find(
+        {
+          select: {
+            id: true,
+            name: true,
+            surname: true,
+            email: true,
+            role: true,
+            is_active: true,
+            created_at: true,
+            updated_at: true
+
+        }
+        }
+      );
+  
+      return res.json(
+        {
+          success: true,
+          message: "users retrieved",
+          data: customers
+        }
+      )
+  
+    } catch (error) {
+      return res.json(
+        {
+          success: false,
+          message: "users cant be retrieved",
+          error: error
+        }
+      )
+    }
+  }
+export { register, login, profile, update, getAllAppointmentByTattooArtistId, getAllTattooArtist, getAllCustomers }
