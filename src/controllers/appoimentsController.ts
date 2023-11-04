@@ -31,14 +31,10 @@ const create = async (req: Request, res:Response, next: NextFunction) => {
 
 const updateAppointmentById = async(req: any, res: Response) => {
     try {
-      // recuperamos la info
       const tattoo_artist_id = req.body.tattoo_artist_id
       const status = req.body.status
       const date = req.body.date
-  
-      // validar la info
-  
-      // comprobarmos si la task nos pertenece 
+    
       const appoimentId = req.params.id
   
       const appointment = await Appointment.findOneBy(
@@ -55,7 +51,7 @@ const updateAppointmentById = async(req: any, res: Response) => {
         })
       }
   
-      const updateTask = await Appointment.update(
+      const updateAppointment = await Appointment.update(
         {
           id: parseInt(appoimentId)
         },
@@ -69,7 +65,7 @@ const updateAppointmentById = async(req: any, res: Response) => {
       return res.json({
         success: true,
         message: "Appointment updated",
-        data: updateTask
+        data: updateAppointment
       })
     } catch (error) {
       return res.json({
