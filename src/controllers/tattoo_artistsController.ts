@@ -269,12 +269,40 @@ const update = async (req: Request, res: Response) => {
   
       const {role, is_active} = req.body
   
-      const updateCustomer = await Tattoo_artist.update(
+      const updateTattoo_artist = await Tattoo_artist.update(
         {
           id: req.body.id
         },
         {
           role: role,
+          is_active: is_active
+        }
+      )
+  
+      return res.json({
+        success: true,
+        message: "User updated",
+        data: updateTattoo_artist
+      })
+    } catch (error) {
+      return res.json({
+        success: false,
+        message: "User information cant by updated",
+        error: error
+      })
+    }
+  }
+
+  const updateAdminCustomers = async (req: Request, res: Response) => {
+    try{
+  
+      const {is_active} = req.body
+  
+      const updateCustomer = await Customer.update(
+        {
+          id: req.body.id
+        },
+        {
           is_active: is_active
         }
       )
@@ -293,4 +321,4 @@ const update = async (req: Request, res: Response) => {
     }
   }
 
-export { register, login, profile, update, getAllAppointmentByTattooArtistId, getAllTattooArtist, getAllCustomers, updateAdmin }
+export { register, login, profile, update, getAllAppointmentByTattooArtistId, getAllTattooArtist, getAllCustomers, updateAdmin, updateAdminCustomers }
