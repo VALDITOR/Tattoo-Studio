@@ -37,18 +37,35 @@ const createTask = async(req: any, res: Response) => {
   }
 }
 
-const getAllTasksByUserId = async(req: any, res: Response) => {
+const getAllTasksByUserId = async(req: Request, res: Response) => {
   try {
-    const tasks = await Task.findBy(
+    const taskId = req.params.id
+    const task = await Task.findOne(
       {
-        user_id: req.token.id
+        select: {
+          id: true,
+          title: true,
+          status: true,
+          created_at: true,
+          user: {
+            id: true,
+            username: true,
+            email: true
+          }
+        },
+        where:{
+          id: parseInt(taskId)
+        },
+        relations: {
+          user: true,
+        },
       }
     )
 
     return res.json({
       success: true,
       message: "tasks by user retrieved",
-      data: tasks
+      data: task
     })
   } catch (error) {
     return res.json({
