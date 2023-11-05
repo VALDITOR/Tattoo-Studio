@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "6db26509-fb80-4987-9b7e-b61d1305c587",
+		"name": "appointments routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30187085"
+	},
+	"item": [
+		{
+			"name": "localhost:5050/appoiments/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImJvcmphQGdtYWlsLmNvbSIsImlhdCI6MTY5ODczOTk3NSwiZXhwIjoxNjk4NzUwNzc1fQ.8OZWuoCtYFVESS-NrAGrth0YoewRVK4OvNJN6J9u2F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_id\": \"1\",\r\n    \"tattoo_artist_id\": \"1\",\r\n    \"date\": \"2023-12-30 14:01:04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/appoiments/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"appoiments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/appoiments/update/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImJvcmphQGdtYWlsLmNvbSIsImlhdCI6MTY5ODczOTk3NSwiZXhwIjoxNjk4NzUwNzc1fQ.8OZWuoCtYFVESS-NrAGrth0YoewRVK4OvNJN6J9u2F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tattoo_artist_id\": 1,\r\n    \"status\": \"0\",\r\n    \"date\": \"2024-12-30 14:01:04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/appoiments/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"appoiments",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/appoiments/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImJvcmphQGdtYWlsLmNvbSIsImlhdCI6MTY5ODczOTk3NSwiZXhwIjoxNjk4NzUwNzc1fQ.8OZWuoCtYFVESS-NrAGrth0YoewRVK4OvNJN6J9u2F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/appoiments/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"appoiments",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
