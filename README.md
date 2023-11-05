@@ -274,7 +274,7 @@ Technologies used:
 
 ## Acknowledgments
 
-I would like to thank my classmates and instructors from the Geekshub FSD Bootcamp for their collaboration in helping me complete this project
+I would like to thank my classmates and teachers from the Geekshub FSD Bootcamp for their collaboration in helping me complete this project
 
 ## Contact
 <a href="https://www.linkedin.com/in/alejandro-valdivielso-tortosa-9b2154273/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
