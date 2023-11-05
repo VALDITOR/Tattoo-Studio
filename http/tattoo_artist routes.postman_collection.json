@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "c9fafd36-e6b8-42dc-b9aa-0e52c669a882",
+		"name": "tattoo_artist routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30187085"
+	},
+	"item": [
+		{
+			"name": "localhost:5050/tattoo_artist/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNjk4NDAyOTY1LCJleHAiOjE2OTg0MTM3NjV9.AgvhQrK7qLvMpT_yGcm9PHtbeoCWR5Py9wfCMAqyoWk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pablo@gmail.com\",\r\n    \"password\": \"Pablo_Prost\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/tattoo_artist/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tattoo_artist",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/tattoo_artist/profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJwYWJsb0BnbWFpbC5jb20iLCJpYXQiOjE2OTg2NTcxNjMsImV4cCI6MTY5ODY2Nzk2M30.789MTc2HpYuBPVvONmGdsEhrCmyU9PNqEQoIE9HUEAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/tattoo_artist/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tattoo_artist",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/tattoo_artist/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJnYXN0b25AZ21haWwuY29tIiwiaWF0IjoxNjk4NjU4NDE5LCJleHAiOjE2OTg2NjkyMTl9.xVwiTq16kxMi_TKIGsQOFinr6hXQwpuzPuzzNbtUIEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gaston\",\r\n    \"surname\": \"Valentinni\",\r\n    \"email\": \"gaston@gmail.com\",\r\n    \"password\": \"Gaston!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/tattoo_artist/update",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tattoo_artist",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/tattoo_artist/appointment/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJhbGV4QGdtYWlsLmNvbSIsImlhdCI6MTY5ODc1MDgxNSwiZXhwIjoxNjk4NzYxNjE1fQ.ayic6ZXWKp7TxSmoEMKpjw9ZfqKdl4NDk3SEx7OQcus",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/tattoo_artist/appointment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tattoo_artist",
+						"appointment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/tattoo_artist/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImJvcmphQGdtYWlsLmNvbSIsImlhdCI6MTY5ODkxMzg1OCwiZXhwIjoxNjk4OTI0NjU4fQ.o8ivB7FncqAuhcvvct7i9DZFBqmzG-YUeWH45WEjDkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/tattoo_artist/all",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tattoo_artist",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

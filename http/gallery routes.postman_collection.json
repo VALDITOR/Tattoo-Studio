@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "36cab199-3660-4541-ab33-1bcbce70d66e",
+		"name": "gallery routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30187085"
+	},
+	"item": [
+		{
+			"name": "localhost:5050/gallery/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJhbGV4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTA5NjI2NywiZXhwIjoxNjk5MTA3MDY3fQ.fwXKtJ2Bl6UibV_aRFCEz7iZTO6xdf3xGPhf_FlD4aQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tattoo_artist_id\": 1,\r\n    \"image\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/gallery/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"gallery",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/gallery/update/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJhbGV4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTA5NjI2NywiZXhwIjoxNjk5MTA3MDY3fQ.fwXKtJ2Bl6UibV_aRFCEz7iZTO6xdf3xGPhf_FlD4aQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"update2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/gallery/update/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"gallery",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/gallery/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJhbGV4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTA5NjI2NywiZXhwIjoxNjk5MTA3MDY3fQ.fwXKtJ2Bl6UibV_aRFCEz7iZTO6xdf3xGPhf_FlD4aQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/gallery/all",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"gallery",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/gallery/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InN1cGVyX2FkbWluIiwiZW1haWwiOiJhbGV4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTA5NjI2NywiZXhwIjoxNjk5MTA3MDY3fQ.fwXKtJ2Bl6UibV_aRFCEz7iZTO6xdf3xGPhf_FlD4aQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/gallery/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"gallery",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "0a6c61a4-1a34-4c20-a7fb-ff38f064275a",
+		"name": "customers routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30187085"
+	},
+	"item": [
+		{
+			"name": "localhost:5050/customer/register",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alex\",\r\n    \"surname\": \"Valdivielso\",\r\n    \"email\": \"alex@gmail.com\",\r\n    \"password\": \"Pas&asdf\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/customer/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"customer",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/customer/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"alex@gmail.com\",\r\n    \"password\": \"Pas&asdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/customer/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"customer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/customer/profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNjk4NDAyOTY1LCJleHAiOjE2OTg0MTM3NjV9.AgvhQrK7qLvMpT_yGcm9PHtbeoCWR5Py9wfCMAqyoWk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/customer/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"customer",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/customer/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNjk4NDAyOTY1LCJleHAiOjE2OTg0MTM3NjV9.AgvhQrK7qLvMpT_yGcm9PHtbeoCWR5Py9wfCMAqyoWk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alejandro\",\r\n    \"surname\": \"Valdi\",\r\n    \"email\": \"alejandro@gmail.com\",\r\n    \"password\": \"Pas&asdfs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/customer/update",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"customer",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5050/customer/appointment/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImJvcmphQGdtYWlsLmNvbSIsImlhdCI6MTY5ODczOTk3NSwiZXhwIjoxNjk4NzUwNzc1fQ.8OZWuoCtYFVESS-NrAGrth0YoewRVK4OvNJN6J9u2F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/customer/appointment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"customer",
+						"appointment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
