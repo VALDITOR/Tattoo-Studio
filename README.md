@@ -88,7 +88,7 @@ Technologies used:
 
             GET http://localhost:5050/customer/profile
 
-    -UPDATE (Requires Auth: user)
+    - UPDATE (Requires Auth: user)
 
             PUT http://localhost:5050/customer/update 
    body:
@@ -101,7 +101,7 @@ Technologies used:
               }
    ```
 
-- GET APPOINTMENT (Requires Auth)
+  - GET APPOINTMENT (Requires Auth)
 
             GET http://localhost:5050/customer/appointment/:id
         
@@ -121,7 +121,7 @@ Technologies used:
 
             GET http://localhost:5050/tattoo_artist/profile
 
-    -UPDATE (Requires Auth: admin)
+    - UPDATE (Requires Auth: admin)
 
             PUT http://localhost:5050/tattoo_artist/update 
    body:
@@ -134,11 +134,11 @@ Technologies used:
               }
    ```
 
-- GET APPOINTMENT (Requires Auth: admin)
+  - GET APPOINTMENT (Requires Auth: admin)
 
             GET http://localhost:5050/customer/appointment/:id
   
-- GET ALL TATTOO ARTIST (Requires Auth: user)
+  - GET ALL TATTOO ARTIST (Requires Auth: user)
 
             GET http://localhost:5050/tattoo_artist/all
 
@@ -160,7 +160,7 @@ Technologies used:
 
             GET http://localhost:5050/tattoo_artist/customers
 
-    -UPDATE ROLE & ACTIVATION OF TATTOO ARTIST (Requires Auth: super admin)
+    - UPDATE ROLE & ACTIVATION OF TATTOO ARTIST (Requires Auth: super admin)
 
             PUT http://localhost:5050/tattoo_artist/update_admin 
    body:
@@ -172,7 +172,7 @@ Technologies used:
               }
    ```
 
--UPDATE ACCOUNT ACTIVATION OF CUSTOMER (Requires Auth: super admin)
+    - UPDATE ACCOUNT ACTIVATION OF CUSTOMER (Requires Auth: super admin)
 
             PUT http://localhost:5050/tattoo_artist/update_admin_customer 
    body:
@@ -208,7 +208,7 @@ Technologies used:
             }
         ```
 
-- DELETE (Requires Auth: user)
+    - DELETE (Requires Auth: user)
 
             DELETE http://localhost:5050/appointments/delete
   body:
@@ -230,21 +230,21 @@ Technologies used:
             }
         ```
 
-     - UPDATE (Requires Auth: admin)
+    - UPDATE (Requires Auth: admin)
 
             PUT http://localhost:5050/gallery/update/:id
-        body:
-        ``` json
+  body:
+   ``` json
             {
                 "image": "url"
             }
-        ```
+    ```
         
-- GET ALL IMAGES (Requires Auth: user)
+    - GET ALL IMAGES (Requires Auth: user)
 
             GET http://localhost:5050/gallery/all
 
-- DELETE (Requires Auth: admin)
+    - DELETE (Requires Auth: admin)
 
             DELETE http://localhost:5050/gallery/delete
   body:
@@ -256,13 +256,13 @@ Technologies used:
 </details>
 
 ## Future features
-[ ] Get images from the gallery by tattoo artist id 
-[ ] Add a check to ensure that a field cannot be left empty
-[ ] Add an appointment confirmation system 
+- Get images from the gallery by tattoo artist id
+- Add a check to ensure that a field cannot be left empty
+- Add an appointment confirmation system 
 
 ## Errors
-[ ] A tattoo artist can create appointments for their colleagues
-[ ] You can leave the fields for first name and last name empty
+- A tattoo artist can create appointments for their colleagues
+- You can leave the fields for first name and last name empty
 
 ## Developer
 
