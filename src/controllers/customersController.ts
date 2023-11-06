@@ -129,6 +129,19 @@ const update = async (req: Request, res: Response) => {
 
     const {name, surname,email,password} = req.body
 
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (!emailRegex.test(email)) {
+            return res.json({ mensaje: 'The email entered is not valid' });
+          }
+
+        const passswordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z!@#$%^&*]{4,12}$/;
+        if (!passswordRegex.test(password)) {
+        return res.json({ mensaje: 'Invalid password' });
+        }
+
+        const encryptedPassword = bcrypt.hashSync(password, 10)
+
     const updateCustomer = await Customer.update(
       {
         id: req.token.id
@@ -137,7 +150,7 @@ const update = async (req: Request, res: Response) => {
         name: name,
         surname: surname,
         email: email,
-        password: password
+        password: encryptedPassword
       }
     )
 
