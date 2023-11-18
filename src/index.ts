@@ -4,10 +4,12 @@ import { router as routerTatoo_artists } from "./routes/tattoo_artistsRoutes"
 import { router as routerAppoiments } from "./routes/appointmentsRoutes"
 import { router as routerGalleries } from "./routes/galleriesRoutes"
 import { AppDataSource } from "./db";
+import cors from "cors";
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 const PORT = process.env.PORT || 5050
 
