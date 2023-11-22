@@ -3,7 +3,7 @@ import { Appointment } from "../models/Appointment";
 
 const create = async (req: Request, res:Response, next: NextFunction) => {
     try{
-        const custumer_id = req.body.customer_id
+        const custumer_id = req.token.id
         const tattoo_artist_id = req.body.tattoo_artist_id
         const date = req.body.date;
 

@@ -12,6 +12,6 @@ router.get('/profile', auth, profile)
 
 router.put('/update', auth, update)
 
-router.get('/appointment/:id', auth, getAllAppointmentByCustomerId)
+router.get('/appointment', auth, getAllAppointmentByCustomerId)
 
 export { router }

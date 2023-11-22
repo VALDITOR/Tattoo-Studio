@@ -4,7 +4,7 @@ import { auth } from "../middlewares/auth";
 
 const router = Router()
 
-router.post('/create', create)
+router.post('/create', auth, create)
 router.post('/update/:id', auth, updateAppointmentById)
 router.delete('/delete', auth, deleteAppointmentByUserId)
 
